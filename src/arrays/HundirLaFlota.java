@@ -56,7 +56,7 @@ public class HundirLaFlota {
 			
 			System.out.println("Jugador 2:");
 			pintaTablero(tableroJ2);
-			while( barquitosJ2<numBarquitos && turnoJugador(tablero, tableroJ2) ) {
+			while(barquitosJ2<numBarquitos && turnoJugador(tablero, tableroJ2) ) {
 				
 				barquitosJ2++;
 				
