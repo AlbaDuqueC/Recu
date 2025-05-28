@@ -4,7 +4,6 @@ import java.util.Random;
 
 public class BusquedaDelTesoro {
 
-	static Random rand = new Random();
 
 	public static char[][] tablero;
 	public static int posI;
@@ -28,6 +27,8 @@ public class BusquedaDelTesoro {
 
 	public static void generaPosicionTesoro() {
 
+		Random rand = new Random();
+		
 		int iX = rand.nextInt(tablero.length);
 		int jX = rand.nextInt(tablero[0].length);
 
@@ -37,11 +38,13 @@ public class BusquedaDelTesoro {
 
 	public static void generaObstaculos(int numObstaculos) {
 
+		Random rand = new Random();
+		
 		int cont = 0;
 		int iO;
 		int jO;
 
-		while (cont <= numObstaculos) {
+		while (cont < numObstaculos) {
 
 			iO = rand.nextInt(tablero.length);
 			jO = rand.nextInt(tablero[0].length);
@@ -90,16 +93,18 @@ public class BusquedaDelTesoro {
 
 	public static void generaPosicionJugador() {
 
+		Random rand = new Random();
+		
 		int iJ;
 		int jJ;
 		boolean salir = false;
 
 		do {
 
-			iJ = rand.nextInt(tablero.length);
-			jJ = rand.nextInt(tablero[0].length);
+			iJ = rand.nextInt(0, tablero.length);
+			jJ = rand.nextInt(0, tablero[0].length);
 
-			if (tablero[iJ][jJ] != 'X' && tablero[iJ][jJ] != '*') {
+			if (tablero[iJ][jJ] == ' ') {
 				posI = iJ;
 				posJ = iJ;
 				salir = true;
@@ -155,14 +160,14 @@ public class BusquedaDelTesoro {
 			}
 		}
 		case "ABAJO" -> {
-			if (posI + 1 >= 0 && tablero[posI + 1][posJ] != '*') {
+			if (posI + 1 <tablero.length && tablero[posI + 1][posJ] != '*') {
 				posI++;
 			} else {
 				res = -1;
 			}
 		}
 		case "DERECHA" -> {
-			if (posJ + 1 >= 0 && tablero[posI][posJ + 1] != '*') {
+			if (posJ + 1 <tablero[0].length && tablero[posI][posJ + 1] != '*') {
 				posJ++;
 			} else {
 				res = -1;

@@ -36,7 +36,7 @@ public class PrincipalBusquedaDelTesoro {
 
 		BusquedaDelTesoro.inicializaTablero(filas, columnas);
 
-		numObstaculos = (int) (Math.sqrt(filas * columnas)) / 2;
+		numObstaculos = (int) ((Math.sqrt(filas * columnas)) / 2);
 
 		BusquedaDelTesoro.generaPosicionTesoro();
 
