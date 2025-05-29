@@ -177,7 +177,7 @@ public class HundirLaFlota {
 		
 		columna=sc.nextInt();
 		
-		if(tablero[fila-65][columna-1]=='B') {
+		if(tablero[fila-'A'][columna-1]=='B') {
 			
 			acertar=true;
 			System.out.println("HUNDIDO");
@@ -186,7 +186,7 @@ public class HundirLaFlota {
 			System.out.println("AGUA");
 		}
 		
-		tableroJ[fila-65][columna-1]=tablero[fila-65][columna-1];
+		tableroJ[fila-'A'][columna-1]=tablero[fila-'A'][columna-1];
 		
 		return acertar;
 		

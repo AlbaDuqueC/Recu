@@ -95,22 +95,13 @@ public class BusquedaDelTesoro {
 
 		Random rand = new Random();
 		
-		int iJ;
-		int jJ;
-		boolean salir = false;
-
 		do {
 
-			iJ = rand.nextInt(0, tablero.length);
-			jJ = rand.nextInt(0, tablero[0].length);
+			posI = rand.nextInt(0, tablero.length);
+			posJ = rand.nextInt(0, tablero[0].length);
 
-			if (tablero[iJ][jJ] == ' ') {
-				posI = iJ;
-				posJ = iJ;
-				salir = true;
-			}
-
-		} while (!salir);
+			
+		} while (tablero[posI][posJ] != ' ');
 
 	}
 
@@ -128,7 +119,7 @@ public class BusquedaDelTesoro {
 
 			for (int j = 0; j < tablero[i].length; j++) {
 
-				if (tablero[i][j]!='*' && i == posI && j == posJ) {
+				if ( i == posI && j == posJ) {
 
 					System.out.print("\tJ");
 
