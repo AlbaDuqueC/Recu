@@ -33,7 +33,7 @@ public class Ahorcado {
 
 		String letrita = String.valueOf(letra).toLowerCase();
 
-		char[] pistita = palabraSecreta.toCharArray();
+		char[] pistita = palabraPista.toCharArray();
 
 		int pos = palabraSecreta.indexOf(letrita);
 
