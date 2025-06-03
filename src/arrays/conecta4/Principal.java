@@ -9,14 +9,15 @@ public class Principal {
 		
 		Scanner sc= new Scanner(System.in);
 		
-		Jugador4Raya J1= new Jugador4Raya("Mare", "X");
-		Jugador4Raya J2= new Jugador4Raya("Alba", "O");
+		Jugador4Raya J1= new Jugador4Raya("Juana", "X");
+		Jugador4Raya J2= new Jugador4Raya("Pepa", "O");
 		
 		Jugador4Raya JugadorPrincipal;
 		
 		int turno;
 		
 		int columna;
+		int fila;
 		
 		String res;
 		

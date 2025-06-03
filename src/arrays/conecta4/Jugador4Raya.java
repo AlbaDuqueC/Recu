@@ -54,6 +54,7 @@ public class Jugador4Raya {
 			} else {
 
 				i--;
+				
 
 			}
 

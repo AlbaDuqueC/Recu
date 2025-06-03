@@ -46,10 +46,8 @@ public class HundirLaFlota {
 
 				JugadorPrincipal.setCont();
 
-				//Peruanada de codio el de aqui 
-				if (JugadorPrincipal.getCont() < numBarquitos) {
-					System.out.println(JugadorPrincipal.toString());
-				}
+				
+				
 
 			}
 
