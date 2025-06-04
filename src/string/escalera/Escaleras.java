@@ -13,16 +13,18 @@ public class Escaleras {
 	
 	static String jugada="";
 	
+	static final int NUMINTENTOS=7;
+	
 	public static void seleccionaJuego() {
 		
 		Random rand= new Random();
 		
-		int pos=rand.nextInt(0, juegos[0].length);
+		int pos=rand.nextInt(0, juegos.length);
 		
-		palabraInicio=juegos[0][pos];
-		palabraObjetivo=juegos[1][pos];
+		palabraInicio=juegos[pos][0];
+		palabraObjetivo=juegos[pos][1];
 		
-		jugada+=palabraInicio;
+		jugada = palabraInicio;
 		
 	}
 	
@@ -30,9 +32,9 @@ public class Escaleras {
 		
 		String res="";
 		
-		int ultimoEspacio= jugada.lastIndexOf(" ");
+		int ultimoEspacio= jugada.lastIndexOf(" ")+1;
 		
-		res=jugada.substring(ultimoEspacio, jugada.length());
+		res=jugada.substring(ultimoEspacio);
 		
 		return res;
 		
@@ -40,31 +42,31 @@ public class Escaleras {
 	
 	public static boolean compruebaIntento(String intento) {
 		
-		boolean res=true;
+		boolean res;
 		
-		char [] arrayIntento= intento.toCharArray();
-		char[] arrayUltimaJugada= ultimoIntento().toCharArray();
+		String ultimaJugada= ultimoIntento();
 		
 		int i=0;
 		
 		int cont=0;
 		
-		while(i<arrayUltimaJugada.length && !res) {
 		
-			if(arrayIntento[i]!=arrayUltimaJugada[i]) {
+		
+		while(i<ultimaJugada.length() && cont<=1) {
+			
+			if(intento.charAt(i) != ultimaJugada.charAt(i)) {
 				
 				++cont;
 				
-				if(cont>1) {
-					res=false;
-				}
-				
 			}
-			
+			++i;
 		}
+		
+		res = cont == 1;
 		
 		return res;
 		
 	}
+	
 
 }
