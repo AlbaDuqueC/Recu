@@ -10,7 +10,8 @@ public class Criptograma {
 	static String[] frases = {
 			"las guerras seguiran mientras el color de la piel siga siendo mas importante que el de los ojos",
 			"aprende a vivir y sabras morir bien", "cada dia sabemos mas y entendemos menos",
-			"el dinero no puede comprar la vida", "la verdadera sabiduria esta en reconocer la propia ignorancia" };
+			"el dinero no puede comprar la vida", "la verdadera sabiduria esta en reconocer la propia ignorancia",
+			"alaverga" };
 
 	static String fraseReal = "";
 
@@ -23,25 +24,23 @@ public class Criptograma {
 		int iRand;
 		int jRand;
 
-		char[][] nuevoAbecedario = new char[abecedario.length][abecedario.length];
+		char letra;
 
 		for (int i = 0; i < abecedario.length; i++) {
 
-			for (int j = 0; j < abecedario.length; j++) {
+			for (int j = 0; j < abecedario[i].length; j++) {
 
-				do {
-					iRand = rand.nextInt(0, nuevoAbecedario.length);
-					jRand = rand.nextInt(0, nuevoAbecedario[0].length);
+				iRand = rand.nextInt(0, abecedario.length);
+				jRand = rand.nextInt(0, abecedario[0].length);
 
-				} while (String.valueOf(nuevoAbecedario[iRand][jRand]) != null);
+				letra = abecedario[iRand][jRand];
 
-				nuevoAbecedario[iRand][jRand] = abecedario[i][j];
+				abecedario[iRand][jRand] = abecedario[i][j];
+				abecedario[i][j] = letra;
 
 			}
 
 		}
-
-		abecedario = nuevoAbecedario;
 
 	}
 
@@ -62,25 +61,42 @@ public class Criptograma {
 		int i = 0;
 		int j = 0;
 
+		char caracter;
+
 		for (int k = 0; k < fraseReal.length(); k++) {
 
-			while (i < abecedario.length && !res) {
+			res = false;
 
-				while (j < abecedario[0].length && !res) {
+			i = 0;
 
-					if (abecedario[i][j] == fraseReal.charAt(k)) {
+			caracter = fraseReal.charAt(k);
 
-						fraseCodificada += i + "" + j + " ";
+			if (caracter == ' ') {
 
-						res = true;
+				fraseCodificada += "  ";
+
+			} else {
+
+				while (i < abecedario.length && !res) {
+
+					j = 0;
+
+					while (j < abecedario[i].length && !res) {
+
+						if (abecedario[i][j] == caracter) {
+
+							fraseCodificada += i + "" + j + " ";
+
+							res = true;
+
+						}
+						++j;
 
 					}
+					++i;
 
 				}
-
 			}
-
-			res = false;
 
 		}
 
@@ -93,9 +109,13 @@ public class Criptograma {
 		int iNum = codigo / 10;
 		int jNum = codigo % 10;
 
+		String codigoString = iNum + "" + jNum;
+
+		String letraString = String.valueOf(letra);
+
 		if (abecedario[iNum][jNum] == letra) {
 
-			fraseCodificada.replace(String.valueOf(codigo), String.valueOf(letra));
+			fraseCodificada = fraseCodificada.replace(codigoString, letraString);
 
 			res = true;
 
@@ -111,15 +131,26 @@ public class Criptograma {
 
 		String fraseCod = "";
 
+		char caracter;
+
+		char caracterSiguiente;
+
+		int sig;
+
 		for (int i = 0; i < fraseCodificada.length(); i++) {
 
-			if (fraseCodificada.charAt(i) == ' ' && fraseCodificada.charAt(i + 1) == ' ') {
+			caracter = fraseCodificada.charAt(i);
 
-				fraseCod += " ";
+			sig = i + 1;
 
-			} else if (fraseCodificada.charAt(i) != ' ') {
+			if (caracter != ' ') {
 
-				fraseCod += String.valueOf(fraseCodificada.charAt(i));
+				fraseCod += String.valueOf(caracter);
+
+			} else if (sig < fraseCodificada.length() && fraseCodificada.charAt(sig) == ' ') {
+
+				fraseCod += String.valueOf(caracter);
+				++i;
 
 			}
 
