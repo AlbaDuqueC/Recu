@@ -1,0 +1,94 @@
+class abstract Personaje
+	
+	- String nombre
+	- int nivel: 0
+	- int pVida
+	- int pMana
+	- boolean escudo: false
+	
+	- List<Pocion> inventario
+	
+	+ Personaje (String nombre, int pVida, int pMana)
+	
+	+ String getNombre()
+	+ int getNivel()
+	+ int getPVifa()
+	+ int getPMana()
+	+ boolean isEscudo()
+	
+	+ setNivel(int nivel)
+	+ void activarEscudo()
+	
+	+ boolean recibirDaño (int daño)
+	+ boolean recuperarVida (int vida)
+	+ boolean recuperarMana (int mana)
+	+ void cogerPocion (Pocion poc)
+	+ void usarPocion (Pocion poc)
+	
+	override:
+	
+		+ equal(Objet o)
+		+ compareTo(Personaje p)
+		+ String toString()
+		
+
+class Guerrero extents Personaje
+
+	+ Guerrero (String nombre, int pVida, int pMana)
+
+	Override:
+		+ boolean defender (Personaje p)
+		+ boolean atacar (Personaje p)
+		+ String toString()
+	
+	
+class Picaro extents Personaje
+
+	+ Picaro (String nombre, int pVida, int pMana)
+	
+	Override:
+		+ boolean atacar (Personaje p)
+		+ String toString()
+
+class Mago extents Personaje
+
+	+ Mago (String nombre, int pVida, int pMana)
+	
+	Override:
+		+ boolean curar (Personaje p)
+		+ boolean atacar (Personaje p)
+		+ String toString()
+
+	
+	
+class Pocion
+	
+	-enum Tipo {VIDA, MANA}
+	
+	- Tipo tipoPocion
+	- int cantidad
+	
+	+ Pocion (String tipo, int cantidad)
+	
+	+ String getTipoPocion()
+	+ int getCantidad()
+	
+	Override:
+		+ equals(Objet o)
+		+ String toString()
+	
+class interfaz Atacar
+
+	+ boolean atacar (Personaje p)
+
+class interfaz Curar
+
+	+ boolean curar (Personaje p)
+
+class interfaz Defender
+
+	+ boolean defender (Personaje p)
+
+
+class ManaNegativoException implements Exception
+class VidaNegativoException implements Exception
