@@ -169,14 +169,14 @@ public abstract class Personaje implements Comparable<Personaje> {
 
 		String esc = (this.escudo) ? "- Escudo: activo" : "";
 
-		res += " - " + this.nombre + " - nivel:" + this.nivel + " - PV: " + this.pVida + " - PH: " + this.pMana  + esc;
-		
-		res+= "\nPociones: ";
-		
-		for(Pocion poc: inventario) {
-			
-			res+= poc.toString() + ", ";
-			
+		res += " - " + this.nombre + " - nivel:" + this.nivel + " - PV: " + this.pVida + " - PH: " + this.pMana + esc;
+
+		res += "\nPociones: ";
+
+		for (Pocion poc : inventario) {
+
+			res += poc.toString() + ", ";
+
 		}
 
 		return res;
