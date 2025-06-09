@@ -11,7 +11,7 @@ public abstract class Personaje implements Comparable<Personaje> {
 	private String nombre;
 	private int nivel = 0;
 	private int pVida;
-	private int pMana;
+	protected int pMana;
 	private boolean escudo = false;
 
 	private List<Pocion> inventario = new ArrayList<Pocion>();
@@ -92,30 +92,25 @@ public abstract class Personaje implements Comparable<Personaje> {
 
 	}
 
-	public boolean recuperarVida(int vida) throws VidaNegativaException {
+	public boolean recuperarVida(int vida) {
 		boolean res = false;
 
 		if (vida > 0) {
 			this.pVida += vida;
 			res = true;
-		} else {
-			throw new VidaNegativaException();
 		}
 
 		return res;
 	}
 
-	public boolean recuperarMana(int mana) throws ManaNegativoException {
+	public boolean recuperarMana(int mana) {
 
 		boolean res = false;
 
 		if (mana > 0) {
 			this.pMana += mana;
 			res = true;
-		} else {
-			throw new ManaNegativoException();
 		}
-
 		return res;
 
 	}
