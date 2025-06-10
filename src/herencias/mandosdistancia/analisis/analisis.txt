@@ -1,0 +1,109 @@
+class Mando implements Comparable
+
+	- String modelo
+	- int anchura
+	- int altura
+	- double precio
+	- boolean encendido: false
+	
+	+ Mando(String modelo, int anchura, int altura, double precio) throws DimensionNegativaException, PrecioNegativoException
+	
+	+ getModelo()
+	+ getAnchura()
+	+ getAltura()
+	+ getPrecio()
+	+ getEncendido()
+	
+	+ setPrecio(int precio)
+	
+	+ void encenderApagar()
+	
+	Override:
+		+ equals(Object o)
+		+ compareTo ()
+		+ toString ()
+		
+	
+
+class Television extents Mando implements Volumen
+
+	- int volumen : 0
+	- int canal : 1
+	
+	+ Television (String modelo, int anchura, int altura, double precio)
+	
+	+ getVolumen()
+	+ getCanal()
+	
+	+ void subirVolumen()
+	+ void bajarVolumen()
+	
+	+ void cambiarCanal(int canal)
+	
+	Override: 
+		+ toString ()
+
+class Minicadena extents Mando implements Volumen
+
+	- int volumen : 0
+	
+	+ Minicadenas (String modelo, int anchura, int altura, double precio)
+	
+	+ getVolumen()
+	
+	+ void subirVolumen()
+	+ void bajarVolumen()
+	
+	Override: 
+		+ toString ()
+	
+class Aspiradora extents Mando implemnts Velocidad
+
+	- int velocidad	: 0 //Max 3
+	
+	+ Aspiradora (String modelo, int anchura, int altura, double precio)
+	
+	+ getVelocidad()
+	
+	+ void subirVelocidad()
+	+ void bajarVelocidad()
+	
+	Override: 
+		+ toString ()
+
+class AireAcondicionado extents Mando implemnts Velocidad
+
+	- enum Modo {FRIO, CALOR}
+	- Modo modoAire
+	- int temperatura
+	- int velocidad
+	
+	+ AiresAcondicionados (String modelo, int anchura, int altura, double precio)
+
+	+ String getModoAire()
+	+ int getTemperatura()
+	+ int getVelocidad()
+	
+	+ void subirTemperatura()
+	+ void bajarTemperatura()
+	+ void cambiarModoAire()
+	
+	+ void subirVelocidad()
+	+ void bajarVelocidad()
+	
+	Override: 
+		+ toString ()
+
+class interfaz Volumen
+	
+	+ void subirVolumen()
+	+ void bajarVolumen()
+	
+class interfaz Velocidad
+
+	+ void subirVelocidad()
+	+ void bajarVelocidad()
+
+class DimensionNegativaException implements Exception
+class PrecioNegativoException implements Exception
+

@@ -133,8 +133,6 @@ public class Criptograma {
 
 		char caracter;
 
-		char caracterSiguiente;
-
 		int sig;
 
 		for (int i = 0; i < fraseCodificada.length(); i++) {
@@ -160,6 +158,19 @@ public class Criptograma {
 
 		return res;
 
+	}
+	
+	public static boolean sonIguales2() {
+		
+		boolean res;
+		
+		String frase1=fraseReal.replace(" ", "");
+		String frase2=fraseCodificada.replace(" ", "");
+		
+		res=frase1.equals(frase2);
+		
+		return res;
+		
 	}
 
 }
