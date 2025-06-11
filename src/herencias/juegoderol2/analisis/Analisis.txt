@@ -1,0 +1,87 @@
+class Pocion 
+
+	- enum Tipo {VIDA, MANA}
+	- Tipo tipoPocion
+	- int cantidad
+	
+	+ Pocion (String tipoP, int cantidad)
+	
+	+ getTipoPocion()
+	+ getCantidad()
+	
+	Override: 
+		+ equals()
+		+ toString()
+
+class abstract Personaje implements Comparable 
+	
+	- String nombre
+	- int nivel: 0
+	- int pVida
+	- int pMana
+	- boolean escudo: false
+	
+	- List<Pocion> inventario = new ArrayList<Pocion>()
+	
+	+ Personaje (String nombre, int pV, int pM )
+	
+	+ getNombre()
+	+ getNivel()
+	+ getPVida()
+	+ getPMana()
+	+ isEscudo()
+	
+	+ setNivel()
+	
+	+ void activarEscudo()
+	
+	+ recibirDaño (int daño) //No puede ser negativo y solo daña si el escudo esta inactivo
+	+ recuperarVida (int vida)
+	+ recuperaMana (int mana)
+	+ cogerPocion (Pocion poci)
+	+ usarPocion (Pocion poci) 
+	
+	Override: 
+		+ equals(Object obj)
+		+ compareTo(Personaje p1)
+		+ toString ()
+	
+	
+class Guerrero extents Personaje implements Atacar, Defender
+
+	+ void atacar (Personaje p1)
+	+ void defender (Personaje p2)
+	
+	Override:
+		+ String toString()
+
+class Picaro extends Personaje implements Atacar
+
+	+ void atacar (Personaje p1)
+	
+	Override:
+		+ String toString()
+
+class Mago extends Personaje implements Atacar, Curar
+
+	+ void atacar (Personaje p1)
+	+ void curar (Personaje p1)
+	
+	Override:
+		+ String toString()
+
+
+interfaz Atacar
+
+	+ void atacar (Personaje p1)
+
+interfaz Curar 
+
+	+ void curar (Personaje p1)
+	
+interfaz Defender
+
+	+ void defender (Personaje p1)
+	
+class VidaNegativaException extents Excepction
+class ManaNegativaException extents Excepction

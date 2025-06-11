@@ -1,5 +1,8 @@
 package arrays.recuJunio;
 
+/**
+ * Clase Jugador Matatena
+ */
 public class JugadorMatatena {
 
 	/**
