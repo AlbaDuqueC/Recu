@@ -9,6 +9,12 @@ public class Television extends Mando implements Volumen {
 	private int volumen = 0;
 	private int canal = 1;
 
+	public Television(String modelo, int anchura, int altura)
+			throws DimensionNegativaException, PrecioNegativoException {
+		super(modelo, anchura, altura);
+
+	}
+	
 	public Television(String modelo, int anchura, int altura, double precio)
 			throws DimensionNegativaException, PrecioNegativoException {
 		super(modelo, anchura, altura, precio);

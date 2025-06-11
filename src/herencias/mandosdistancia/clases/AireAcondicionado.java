@@ -14,6 +14,12 @@ public class AireAcondicionado extends Mando implements Velocidad {
 	private int temperatura = 0;
 	private int velocidad = 0;
 
+	public AireAcondicionado(String modelo, int anchura, int altura)
+			throws DimensionNegativaException, PrecioNegativoException {
+		super(modelo, anchura, altura);
+
+	}
+	
 	public AireAcondicionado(String modelo, int anchura, int altura, double precio)
 			throws DimensionNegativaException, PrecioNegativoException {
 		super(modelo, anchura, altura, precio);

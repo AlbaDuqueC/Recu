@@ -11,7 +11,7 @@ public class Mando implements Comparable<Mando> {
 	private double precio;
 	private boolean encendido = false;
 
-	public Mando(String modelo, int anchura, int altura, double precio)
+	public Mando(String modelo, int anchura, int altura)
 			throws DimensionNegativaException, PrecioNegativoException {
 
 		if (modelo != null && !modelo.isBlank()) {
@@ -32,6 +32,13 @@ public class Mando implements Comparable<Mando> {
 		} else {
 			throw new DimensionNegativaException();
 		}
+
+	}
+	
+	public Mando(String modelo, int anchura, int altura, double precio)
+			throws DimensionNegativaException, PrecioNegativoException {
+
+		this(modelo,anchura,altura);
 
 		if (precio > 0) {
 			this.precio = precio;

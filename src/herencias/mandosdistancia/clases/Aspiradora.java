@@ -8,6 +8,11 @@ public class Aspiradora extends Mando implements Velocidad {
 
 	private int velocidad = 0; // Max 3
 
+	public Aspiradora(String modelo, int anchura, int altura)
+			throws DimensionNegativaException, PrecioNegativoException {
+		super(modelo, anchura, altura);
+	}
+	
 	public Aspiradora(String modelo, int anchura, int altura, double precio)
 			throws DimensionNegativaException, PrecioNegativoException {
 		super(modelo, anchura, altura, precio);

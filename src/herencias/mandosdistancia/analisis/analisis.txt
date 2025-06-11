@@ -6,6 +6,7 @@ class Mando implements Comparable
 	- double precio
 	- boolean encendido: false
 	
+	+ Mando(String modelo, int anchura, int altura) throws DimensionNegativaException, PrecioNegativoException
 	+ Mando(String modelo, int anchura, int altura, double precio) throws DimensionNegativaException, PrecioNegativoException
 	
 	+ getModelo()
@@ -30,6 +31,7 @@ class Television extents Mando implements Volumen
 	- int volumen : 0
 	- int canal : 1
 	
+	+ Television (String modelo, int anchura, int altura)
 	+ Television (String modelo, int anchura, int altura, double precio)
 	
 	+ getVolumen()
@@ -47,6 +49,7 @@ class Minicadena extents Mando implements Volumen
 
 	- int volumen : 0
 	
+	+ Minicadenas (String modelo, int anchura, int altura)
 	+ Minicadenas (String modelo, int anchura, int altura, double precio)
 	
 	+ getVolumen()
@@ -61,6 +64,7 @@ class Aspiradora extents Mando implemnts Velocidad
 
 	- int velocidad	: 0 //Max 3
 	
+	+ Aspiradora (String modelo, int anchura, int altura)
 	+ Aspiradora (String modelo, int anchura, int altura, double precio)
 	
 	+ getVelocidad()
@@ -78,6 +82,7 @@ class AireAcondicionado extents Mando implemnts Velocidad
 	- int temperatura
 	- int velocidad
 	
+	+ AiresAcondicionados (String modelo, int anchura, int altura)
 	+ AiresAcondicionados (String modelo, int anchura, int altura, double precio)
 
 	+ String getModoAire()

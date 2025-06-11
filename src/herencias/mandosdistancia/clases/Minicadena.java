@@ -8,6 +8,11 @@ public class Minicadena  extends Mando implements Volumen{
 	
 	private  int volumen= 0;
 
+	public Minicadena(String modelo, int anchura, int altura)
+			throws DimensionNegativaException, PrecioNegativoException {
+		super(modelo, anchura, altura);
+	}
+	
 	public Minicadena(String modelo, int anchura, int altura, double precio)
 			throws DimensionNegativaException, PrecioNegativoException {
 		super(modelo, anchura, altura, precio);
