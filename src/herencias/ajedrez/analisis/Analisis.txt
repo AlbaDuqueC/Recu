@@ -12,7 +12,7 @@ class abtract Pieza implements Combarable
 	+ getColorPieza()
 	
 	Override:
-		+ equals(Object obj)
+		+ abtract equals(Object obj) //Mismo tipo y misma posicion
 		+ compareTo(Pieza p)
 		+ toString()
 	
@@ -26,7 +26,7 @@ class abtract Ajedrez extents Pieza implemnts movimiento
 	+ Ajedrez (char x, int y, String color, nombre)
 	
 	Override:
-		+ abstract boolean movimiento()
+		+ abstract boolean movimiento()		
 		+ toString()
 	
 	
@@ -37,7 +37,7 @@ class Peon extents Ajedrez
 	
 	Override:
 		+ boolean movimiento()
-		+ toString()
+		+ equals(Object obj)
 
 class Torre extents Ajedrez
 
@@ -45,7 +45,7 @@ class Torre extents Ajedrez
 	
 	Override:
 		+ boolean movimiento()
-		+ toString()
+		+ equals(Object obj)
 
 class Alfil extents Ajedrez
 
@@ -53,7 +53,7 @@ class Alfil extents Ajedrez
 	
 	Override:
 		+ boolean movimiento()
-		+ toString()
+		+ equals(Object obj)
 
 class Caballo extents Ajedrez
 
@@ -61,7 +61,7 @@ class Caballo extents Ajedrez
 	
 	Override:
 		+ boolean movimiento()
-		+ toString()
+		+ equals(Object obj)
 
 class Rey extents Ajedrez
 
@@ -69,15 +69,15 @@ class Rey extents Ajedrez
 	
 	Override:
 		+ boolean movimiento()
-		+ toString()
+		+ equals(Object obj)
 
-class Reina	extents Ajedrez
+class Dama extents Ajedrez
 
-	+ Reina (char x, int y, String color, nombre)
+	+ Dama (char x, int y, String color, nombre)
 	
 	Override:
 		+ boolean movimiento()
-		+ toString()
+		+ equals(Object obj)
 	
 	
 ------------------------------------------------------------------------------------------------
@@ -88,6 +88,7 @@ class Damas extents Pieza implemets movimiento
 	
 	Override:
 		+ boolean movimiento()
+		+ equals(Object obj)
 		+ toString()
 
 ------------------------------------------------------------------------------------------------
@@ -100,6 +101,7 @@ class HundirLaFlota extents Pieza
 	+ HundirLaFlota (char x, int y, String color, int tamaño, String direccion)
 
 	Override:
+		+ equals(Object obj)
 		+ toString() 
 
 ------------------------------------------------------------------------------------------------
@@ -109,8 +111,12 @@ class Go extents Pieza
 	+ Go (char x, int y, String color)
 	
 	Override:
+		+ equals(Object obj)
 		+ toString() 
 
 
 ------------------------------------------------------------------------------------------------
 interfaz Movimiento
+
+class PosicionXNegativaException extents Exception 
+class PosicionYNegativaException extents Exception 
