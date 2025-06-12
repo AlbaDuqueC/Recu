@@ -70,7 +70,24 @@ public abstract class Pieza {
 	}
 
 	@Override
-	public abstract boolean equals(Object obj);
+	public boolean equals(Object obj) {
+		
+		boolean res=false;
+		
+		if(this.getClass() == obj.getClass()) {
+			
+			Pieza p= (Pieza) obj;
+			
+			if(p.posicionX == this.posicionX && p.posicionY== this.posicionY) {
+				res=true;
+			}
+			
+			
+		}
+		
+		return res;
+		
+	}
 
 	@Override
 	public String toString() {

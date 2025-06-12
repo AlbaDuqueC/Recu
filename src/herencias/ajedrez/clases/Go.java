@@ -9,26 +9,7 @@ public class Go extends Pieza {
 		super(x, y, color);
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		boolean res = false;
 
-		Go g;
-
-		if (obj instanceof Go) {
-
-			g = (Go) obj;
-
-			if (super.getPosicionX() == g.getPosicionX() && super.getPosicionY() == g.getPosicionY()) {
-
-				res = true;
-
-			}
-
-		}
-
-		return res;
-	}
 
 	@Override
 	public String toString() {

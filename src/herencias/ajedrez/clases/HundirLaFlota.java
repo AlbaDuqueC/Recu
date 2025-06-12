@@ -53,26 +53,7 @@ public class HundirLaFlota extends Pieza {
 
 
 
-	@Override
-	public boolean equals(Object obj) {
-		boolean res = false;
 
-		HundirLaFlota h;
-
-		if (obj instanceof HundirLaFlota) {
-
-			h = (HundirLaFlota) obj;
-
-			if (super.getPosicionX() == h.getPosicionX() && super.getPosicionY() == h.getPosicionY()) {
-
-				res = true;
-
-			}
-
-		}
-
-		return res;
-	}
 	
 	@Override
 	public String toString() {

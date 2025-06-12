@@ -17,25 +17,6 @@ public class Caballo extends Ajedrez {
 		return false;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		boolean res = false;
 
-		Caballo c;
-
-		if (obj instanceof Caballo) {
-
-			c = (Caballo) obj;
-
-			if (super.getPosicionX() == c.getPosicionX() && super.getPosicionY() == c.getPosicionY()) {
-
-				res = true;
-
-			}
-
-		}
-
-		return res;
-	}
 
 }

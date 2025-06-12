@@ -17,25 +17,6 @@ public class Peon extends Ajedrez {
 		return false;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		boolean res = false;
 
-		Peon d;
-
-		if (obj instanceof Peon) {
-
-			d = (Peon) obj;
-
-			if (super.getPosicionX() == d.getPosicionX() && super.getPosicionY() == d.getPosicionY()) {
-
-				res = true;
-
-			}
-
-		}
-
-		return res;
-	}
 
 }

@@ -17,25 +17,6 @@ public class Rey extends Ajedrez {
 		return false;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		boolean res = false;
 
-		Rey d;
-
-		if (obj instanceof Rey) {
-
-			d = (Rey) obj;
-
-			if (super.getPosicionX() == d.getPosicionX() && super.getPosicionY() == d.getPosicionY()) {
-
-				res = true;
-
-			}
-
-		}
-
-		return res;
-	}
 
 }

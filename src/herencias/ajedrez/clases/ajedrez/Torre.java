@@ -17,25 +17,6 @@ public class Torre extends Ajedrez {
 		return false;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		boolean res = false;
 
-		Torre t;
-
-		if (obj instanceof Torre) {
-
-			t = (Torre) obj;
-
-			if (super.getPosicionX() == t.getPosicionX() && super.getPosicionY() == t.getPosicionY()) {
-
-				res = true;
-
-			}
-
-		}
-
-		return res;
-	}
 
 }

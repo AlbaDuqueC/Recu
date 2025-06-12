@@ -34,28 +34,7 @@ public class Damas extends Pieza implements Movimiento {
 
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		
-		boolean res=false;
-		
-		Damas d;
-		
-		if(obj instanceof Damas) {
-			
-			d=(Damas) obj;
-			
-			if(super.getPosicionX() == d.getPosicionX() && super.getPosicionY() == d.getPosicionY()) {
-				
-				res=true;
-				
-			}
-			
-		}
-		
-		return res;
-		
-	}
+
 	
 	@Override
 	public String toString() {

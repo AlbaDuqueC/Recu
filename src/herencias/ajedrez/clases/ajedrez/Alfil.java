@@ -17,26 +17,7 @@ public class Alfil extends Ajedrez {
 		return false;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		boolean res = false;
 
-		Alfil a;
-
-		if (obj instanceof Alfil) {
-
-			a = (Alfil) obj;
-
-			if (super.getPosicionX() == a.getPosicionX() && super.getPosicionY() == a.getPosicionY()) {
-
-				res = true;
-
-			}
-
-		}
-
-		return res;
-	}
 	
 
 	
