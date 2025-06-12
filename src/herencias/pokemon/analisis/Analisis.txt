@@ -1,0 +1,16 @@
+class abstract Pokemon 
+
+	- String nombre
+	- String apodo : ""
+	- int pv
+	- int pp
+	
+	+ Pokemon (String nombre, int pv, int pp)
+	+ Pokemon (String nombre, String apodo, int pv, int pp)
+	
+	+ getNombre()
+	+ getApodo()
+	+ getPV()
+	+ getPP()
+	
+	+ setApodo

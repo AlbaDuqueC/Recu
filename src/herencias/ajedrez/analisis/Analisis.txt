@@ -1,0 +1,112 @@
+class abtract Pieza implements Combarable
+
+	- enum Color {BLANCO, NEGRO, GRIS}
+	- int posicionX //min 1 , max 8
+	- int posicionY //min 1 , max 8
+	- Color colorPieza
+	
+	+ Pieza (char x, int y, String color)
+	
+	+ getPosicionX()
+	+ getPosicionY()
+	+ getColorPieza()
+	
+	Override:
+		+ equals(Object obj)
+		+ compareTo(Pieza p)
+		+ toString()
+	
+	
+------------------------------------------------------------------------------------------------
+	
+class abtract Ajedrez extents Pieza implemnts movimiento
+
+	- String nombre
+	
+	+ Ajedrez (char x, int y, String color, nombre)
+	
+	Override:
+		+ abstract boolean movimiento()
+		+ toString()
+	
+	
+class Peon extents Ajedrez
+
+	+ Peon (char x, int y, String color, nombre)
+	
+	
+	Override:
+		+ boolean movimiento()
+		+ toString()
+
+class Torre extents Ajedrez
+
+	+ Torre (char x, int y, String color, nombre)
+	
+	Override:
+		+ boolean movimiento()
+		+ toString()
+
+class Alfil extents Ajedrez
+
+	+ Alfil (char x, int y, String color, nombre)
+	
+	Override:
+		+ boolean movimiento()
+		+ toString()
+
+class Caballo extents Ajedrez
+
+	+ Caballo (char x, int y, String color, nombre)
+	
+	Override:
+		+ boolean movimiento()
+		+ toString()
+
+class Rey extents Ajedrez
+
+	+ Rey (char x, int y, String color, nombre)
+	
+	Override:
+		+ boolean movimiento()
+		+ toString()
+
+class Reina	extents Ajedrez
+
+	+ Reina (char x, int y, String color, nombre)
+	
+	Override:
+		+ boolean movimiento()
+		+ toString()
+	
+	
+------------------------------------------------------------------------------------------------
+	
+class Damas extents Pieza implemets movimiento
+
+	+ Damas (char x, int y, String color)
+	
+	Override:
+		+ boolean movimiento()
+		+ toString()
+
+------------------------------------------------------------------------------------------------
+class HundirLaFlota extents Pieza
+
+	- enum Direccion {ARRIBA, ABAJO, IZQUIERDA, DERECHA}
+	- int tamaño
+	- Direccion dir
+	
+	+ HundirLaFlota (char x, int y, String color, int tamaño, String direccion)
+
+	Override 
+
+------------------------------------------------------------------------------------------------
+
+class Go extents Pieza
+
+	+ Go (char x, int y, String color)
+
+
+------------------------------------------------------------------------------------------------
+interfaz Movimiento
