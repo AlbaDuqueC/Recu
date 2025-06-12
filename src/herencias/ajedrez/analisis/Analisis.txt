@@ -99,13 +99,17 @@ class HundirLaFlota extents Pieza
 	
 	+ HundirLaFlota (char x, int y, String color, int tamaño, String direccion)
 
-	Override 
+	Override:
+		+ toString() 
 
 ------------------------------------------------------------------------------------------------
 
 class Go extents Pieza
 
 	+ Go (char x, int y, String color)
+	
+	Override:
+		+ toString() 
 
 
 ------------------------------------------------------------------------------------------------
